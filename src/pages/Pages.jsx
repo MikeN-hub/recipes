@@ -1,8 +1,14 @@
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import Home from './Home'
 
 const Pages = () => {
   return (
-    <div>Pages</div>
+    <div>
+      <Routes>
+        <Route></Route>
+      </Routes>
+    </div>
   )
 }
 

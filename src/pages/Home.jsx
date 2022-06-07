@@ -1,8 +1,15 @@
 import React from 'react'
+import Popular from '../components/Popular'
+import Vegeterian from '../components/Vegeterian'
+import Categories from '../components/Categories'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <Categories />
+      <Popular />
+      <Vegeterian />
+    </div>
   )
 }
 
