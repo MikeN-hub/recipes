@@ -7,18 +7,22 @@ import { GiChopsticks, GiNoodles } from 'react-icons/gi'
 const Categories = () => {
   return (
     <Wrapper>
-      <NavLink to={'/cuisine/Italian'}>
+      <SLink to={'/cuisine/Italian'}>
         <FaPizzaSlice size={'2rem'} />
-      </NavLink>
-      <NavLink to={'/cuisine/American'}>
+        <p>Italian</p>
+      </SLink>
+      <SLink to={'/cuisine/American'}>
         <FaHamburger size={'2rem'} />
-      </NavLink>
-      <NavLink to={'/cuisine/Thai'}>
+        <p>American</p>
+      </SLink>
+      <SLink to={'/cuisine/Thai'}>
         <GiNoodles size={'2rem'} />
-      </NavLink>
-      <NavLink to={'/cuisine/Japan'}>
+        <p>Thai</p>
+      </SLink>
+      <SLink to={'/cuisine/Chinese'}>
         <GiChopsticks size={'2rem'} />
-      </NavLink>
+        <p>Chinese</p>
+      </SLink>
     </Wrapper>
   )
 }
@@ -32,9 +36,16 @@ const Wrapper = styled.div`
   gap: 3rem;
   height: 3rem;
   width: 100%;
-  margin: 20 auto;
+  margin: 2rem auto;
 
-  svg {
+  &svg {
     cursor: pointer;
   }
+`
+
+const SLink = styled(NavLink)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `

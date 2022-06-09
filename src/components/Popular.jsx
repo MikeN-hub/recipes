@@ -29,7 +29,6 @@ const Popular = () => {
 
   useEffect(() => {
     getRecipes()
-    console.log(popularRecipes)
   }, [])
 
   return (
@@ -42,8 +41,8 @@ const Popular = () => {
             arrows: true,
             pagination: true,
             drag: 'free',
-            gap: '2rem'
-            }}
+            gap: '2rem',
+          }}
         >
           {popularRecipes.map((recipe) => {
             return (
@@ -69,7 +68,6 @@ const Wrapper = styled.div`
 
   img {
     width: 100%;
-    /* height: 100%; */
   }
 `
 

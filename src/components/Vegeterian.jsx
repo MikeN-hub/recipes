@@ -29,7 +29,6 @@ const Vegeterian = () => {
 
   useEffect(() => {
     getRecipes()
-    console.log(vegeterianRecipes)
   }, [])
 
   return (
