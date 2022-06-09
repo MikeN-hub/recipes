@@ -36,7 +36,7 @@ const Wrapper = styled.div`
   gap: 3rem;
   height: 3rem;
   width: 100%;
-  margin: 2rem auto;
+  margin: 4rem auto;
 
   &svg {
     cursor: pointer;
@@ -44,8 +44,22 @@ const Wrapper = styled.div`
 `
 
 const SLink = styled(NavLink)`
+  width: 5rem;
+  height: 5rem;
+  background-color: grey;
+  border-radius: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  p,
+  svg {
+    color: white;
+  }
+
+  &.active {
+    background: linear-gradient(to right, #f27121, #e94057);
+    transition: 2s ease-in-out;
+  }
 `

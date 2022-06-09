@@ -8,9 +8,7 @@ const API_KEY = process.env.REACT_APP_API_KEY
 
 const Cuisine = () => {
   const [recipes, setRecipes] = useState([])
-
   const params = useParams()
-  const type = params.type
 
   const getRecipes = async (type) => {
     const storageData = localStorage.getItem(type)
@@ -30,14 +28,15 @@ const Cuisine = () => {
   }
 
   useEffect(() => {
-    getRecipes(type)
-  }, [])
+    // setType(params.type)
+    getRecipes(params.type)
+  }, [params.type])
 
   return (
     <div>
       <Categories />
       <SHeader>
-        <h1>{type} dishes</h1>
+        <h1>{params.type} dishes</h1>
       </SHeader>
       <Grid>
         {recipes.map((item) => (
@@ -55,7 +54,7 @@ export default Cuisine
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 3rem;
   margin: 2rem;
 `
@@ -66,6 +65,8 @@ const Card = styled.div`
 
   img {
     border-radius: 1rem;
+    width: 100%;
+    height: 100%;
   }
 
   p {

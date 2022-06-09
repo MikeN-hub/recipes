@@ -1,14 +1,20 @@
-import React, { useState, useEffect } from 'react';
-
-import Pages from './pages/Pages'
-
-const API_KEY = process.env.REACT_APP_API_KEY
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import Layout from './components/Layout'
+import Home from './pages/Home'
+import Cuisine from './pages/Cuisine'
+import Searched from './pages/Searched'
 
 function App() {
-
   return (
     <div className='App'>
-      <Pages />
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route index element={<Home />}></Route>
+          <Route path='cuisine/:type' element={<Cuisine />}></Route>
+          <Route path='searched/:value' element={<Searched />}></Route>
+        </Route>
+      </Routes>
     </div>
   )
 }
