@@ -42,6 +42,7 @@ const Popular = () => {
             arrows: true,
             pagination: true,
             drag: 'free',
+            gap: '2rem'
             }}
         >
           {popularRecipes.map((recipe) => {
@@ -64,6 +65,11 @@ const Wrapper = styled.div`
   h3 {
     text-align: center;
     margin-bottom: 1rem;
+  }
+
+  img {
+    width: 100%;
+    /* height: 100%; */
   }
 `
 

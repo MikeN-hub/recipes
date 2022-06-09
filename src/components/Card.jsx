@@ -11,12 +11,10 @@ const Card = ({ recipe }) => {
 }
 
 const Item = styled.div`
-  height: 200px;
-  width: 300px;
   position: relative;
+  min-height: 15rem;
   border-radius: 2rem;
   overflow: hidden;
-  object-fit: cover;
 
   p {
     position: absolute;
@@ -39,9 +37,6 @@ const Item = styled.div`
     border-radius: 2rem;
     position: absolute;
     left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
   }
 `
 

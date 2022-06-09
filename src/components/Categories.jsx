@@ -7,16 +7,16 @@ import { GiChopsticks, GiNoodles } from 'react-icons/gi'
 const Categories = () => {
   return (
     <Wrapper>
-      <NavLink to={'/cusine/Italian'}>
+      <NavLink to={'/cuisine/Italian'}>
         <FaPizzaSlice size={'2rem'} />
       </NavLink>
-      <NavLink to={'/cusine/American'}>
+      <NavLink to={'/cuisine/American'}>
         <FaHamburger size={'2rem'} />
       </NavLink>
-      <NavLink to={'/cusine/Thai'}>
+      <NavLink to={'/cuisine/Thai'}>
         <GiNoodles size={'2rem'} />
       </NavLink>
-      <NavLink to={'/cusine/Japan'}>
+      <NavLink to={'/cuisine/Japan'}>
         <GiChopsticks size={'2rem'} />
       </NavLink>
     </Wrapper>

@@ -42,6 +42,7 @@ const Vegeterian = () => {
             arrows: true,
             pagination: true,
             drag: 'free',
+            gap: '2rem',
           }}
         >
           {vegeterianRecipes.map((recipe) => {
