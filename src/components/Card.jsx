@@ -1,12 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Card = ({ recipe }) => {
+
   return (
-    <Item>
-      <img src={recipe.image} alt={recipe.title} />
-      <p>{recipe.title}</p>
-    </Item>
+    <Link to={`/details/${recipe.id}`}>
+      <Item>
+        <img src={recipe.image} alt={recipe.title} />
+        <p>{recipe.title}</p>
+      </Item>
+    </Link>
   )
 }
 
@@ -15,6 +19,7 @@ const Item = styled.div`
   min-height: 15rem;
   border-radius: 2rem;
   overflow: hidden;
+  cursor: pointer;
 
   p {
     position: absolute;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 const API_KEY = process.env.REACT_APP_API_KEY
 
@@ -13,24 +13,24 @@ const Searched = () => {
     const res = await axios.get(
       `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&query=${query}`
     )
-    // console.log(res)
-    // console.log(res.data.results)
+
     setSearchResult(res.data.results)
   }
 
   useEffect(() => {
     getSearch(params.value)
-  }, [params])
-  console.log(searchResult)
+  }, [params.value])
 
   return (
     <Grid>
       {searchResult.map((item) => {
         return (
-          <Card key={item.id}>
-            <img src={item.image} alt='' />
-            <p>{item.title}</p>
-          </Card>
+          <Link key={item.id} to={`/details/${item.id}`}>
+            <Card>
+              <img src={item.image} alt='' />
+              <p>{item.title}</p>
+            </Card>
+          </Link>
         )
       })}
     </Grid>
@@ -52,7 +52,13 @@ const Card = styled.div`
   gap: 1rem;
   border-radius: 1rem;
   cursor: pointer;
+
   img {
     border-radius: 1rem;
+  }
+
+  p {
+    text-align: center;
+    padding: 0 2rem;
   }
 `
