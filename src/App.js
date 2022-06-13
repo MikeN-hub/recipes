@@ -15,7 +15,7 @@ function App() {
     <div className='App'>
       <AnimatePresence exitBeforeEnter>
         <Routes location={location} key={location.pathname}>
-          <Route path='/' element={<Layout />}>
+          <Route path='https://miken-hub.github.io/recipe-app/' element={<Layout />}>
             <Route index element={<Home />}></Route>
             <Route path='cuisine/:type' element={<Cuisine />}></Route>
             <Route path='searched/:value' element={<Searched />}></Route>
