@@ -86,7 +86,7 @@ const SLink = styled(NavLink)`
     background: linear-gradient(to right, #f27121, #e94057);
     transition: 2s ease-in-out;
   }
-  
+
   @media (max-width: 768px) {
     & {
       width: 4rem;

@@ -1,15 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { GiKnifeFork } from 'react-icons/gi'
 
 const Header = () => {
   return (
     <SNav>
-      <Link to='/'>
-        <GiKnifeFork size={'3rem'} />
-      </Link>
+      <motion.div whileHover={{ scale: 1.1 }}>
+        <Link to='/'>
+          <GiKnifeFork size={'3rem'} />
+        </Link>
+      </motion.div>
       <h1>delicious</h1>
+      <motion.div className='repo' whileHover={{ scale: 1.1 }}>
+        <SRepo href='https://github.com/MikeN-hub/recipe-app'>Repo</SRepo>
+      </motion.div>
     </SNav>
   )
 }
@@ -29,5 +35,15 @@ const SNav = styled.nav`
 
   h1 {
     font-size: 2rem;
+    color: grey;
   }
+
+  .repo {
+    margin-left: auto;
+  }
+`
+const SRepo = styled.a`
+  font-size: 2rem;
+  cursor: pointer;
+  color: teal;
 `
