@@ -6,10 +6,8 @@ import Home from './pages/Home'
 import Cuisine from './pages/Cuisine'
 import Searched from './pages/Searched'
 import Details from './pages/Details'
-import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
-  
   const location = useLocation()
 
   return (
@@ -22,7 +20,6 @@ function App() {
             <Route path='searched/:value' element={<Searched />}></Route>
             <Route path='details/:id' element={<Details />}></Route>
           </Route>
-          <Route path='*' element={<NotFoundPage />}></Route>
         </Routes>
       </AnimatePresence>
     </div>
