@@ -7,14 +7,23 @@ const API_KEY = process.env.REACT_APP_API_KEY
 
 const Searched = () => {
   const [searchResult, setSearchResult] = useState([])
+  const [noResults, setNoResults] = useState(false)
   const params = useParams()
 
   const getSearch = async (query) => {
-    const res = await axios.get(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&query=${query}`
-    )
-
-    setSearchResult(res.data.results)
+    try {
+      const res = await axios.get(
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&query=${query}`
+      )
+      if (res.data.results.length === 0) {
+        setNoResults(true)
+      } else {
+        setSearchResult(res.data.results)
+        setNoResults(false)
+      }
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   useEffect(() => {
@@ -22,18 +31,21 @@ const Searched = () => {
   }, [params.value])
 
   return (
-    <Grid>
-      {searchResult.map((item) => {
-        return (
-          <Link key={item.id} to={`/details/${item.id}`}>
-            <Card>
-              <img src={item.image} alt='' />
-              <p>{item.title}</p>
-            </Card>
-          </Link>
-        )
-      })}
-    </Grid>
+    <>
+      {noResults && <BadSearch>Nothing found, try again</BadSearch>}
+      <Grid>
+        {searchResult.map((item) => {
+          return (
+            <Link key={item.id} to={`/details/${item.id}`}>
+              <Card>
+                <img src={item.image} alt='' />
+                <p>{item.title}</p>
+              </Card>
+            </Link>
+          )
+        })}
+      </Grid>
+    </>
   )
 }
 
@@ -61,4 +73,13 @@ const Card = styled.div`
     text-align: center;
     padding: 0 2rem;
   }
+`
+
+const BadSearch = styled.div`
+  color: orangered;
+  display: grid;
+  align-items: center;
+  margin: 2rem auto;
+  font-size: 2rem;
+  text-align: center;
 `

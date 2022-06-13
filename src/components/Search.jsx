@@ -15,7 +15,12 @@ const Search = () => {
 
   return (
     <SForm onSubmit={submitHandler}>
-      <AiOutlineSearch size={'1.5rem'} color='black' />
+      <AiOutlineSearch
+        size={'1.5rem'}
+        color='black'
+        cursor={'pointer'}
+        onClick={() => navigate(`searched/${inputText}`)}
+      />
       <input
         type='text'
         autoFocus
@@ -32,7 +37,7 @@ export default Search
 const SForm = styled.form`
   display: flex;
   align-items: center;
-  margin: 2rem 20rem;
+  margin: 2rem 10%;
   border: 2px solid teal;
   border-radius: 1rem;
   background-color: #eeeef3;

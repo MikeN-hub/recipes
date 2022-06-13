@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
-import Card from './Card'
+import { Link } from 'react-router-dom'
+
 const API_KEY = process.env.REACT_APP_API_KEY
 
 const Popular = () => {
@@ -47,7 +48,12 @@ const Popular = () => {
           {popularRecipes.map((recipe) => {
             return (
               <SplideSlide key={recipe.id}>
-                <Card recipe={recipe} />
+                <Card>
+                  <Link to={`/details/${recipe.id}`}>
+                    <img src={recipe.image} alt={recipe.title} />
+                    <p>{recipe.title}</p>
+                  </Link>
+                </Card>
               </SplideSlide>
             )
           })}
@@ -68,6 +74,37 @@ const Wrapper = styled.div`
 
   img {
     width: 100%;
+  }
+`
+
+const Card = styled.div`
+  position: relative;
+  min-height: 15rem;
+  border-radius: 2rem;
+  overflow: hidden;
+  cursor: pointer;
+
+  p {
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 10;
+  }
+  img {
+    border-radius: 2rem;
+    position: absolute;
+    left: 0;
   }
 `
 
