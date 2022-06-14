@@ -21,6 +21,7 @@ function App() {
             <Route path='cuisine/:type' element={<Cuisine />}></Route>
             <Route path='searched/:value' element={<Searched />}></Route>
             <Route path='details/:id' element={<Details />}></Route>
+            <Route path='*' element={<NotFoundPage />}></Route>
           </Route>
         </Routes>
       </AnimatePresence>
