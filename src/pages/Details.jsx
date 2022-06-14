@@ -25,6 +25,7 @@ const Details = () => {
 
   useEffect(() => {
     getDetails()
+    // eslint-disable-next-line
   }, [params.id])
 
   return (

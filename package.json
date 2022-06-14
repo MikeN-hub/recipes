@@ -1,6 +1,6 @@
 {
   "name": "recipe-app",
-  "homepage": "https://miken-hub.github.io/recipe-app/",
+  "homepage": "https://miken-hub.github.io/recipe-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -9,7 +9,7 @@ import Details from './pages/Details'
 import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
-  const location = useLocation()
+  let location = useLocation()
   console.log(location)
 
   return (
@@ -21,8 +21,8 @@ function App() {
             <Route path='cuisine/:type' element={<Cuisine />}></Route>
             <Route path='searched/:value' element={<Searched />}></Route>
             <Route path='details/:id' element={<Details />}></Route>
+            <Route path='*' element={<NotFoundPage />}></Route>
           </Route>
-          <Route path='*' element={<NotFoundPage />}></Route>
         </Routes>
       </AnimatePresence>
     </div>
