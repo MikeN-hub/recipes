@@ -10,7 +10,6 @@ import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
   let location = useLocation()
-  console.log(location)
 
   return (
     <div className='App'>

@@ -17,7 +17,7 @@ const Cuisine = () => {
     } else {
       try {
         const res = await axios.get(
-          `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&cuisine=${type}&number=100`
+          `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&cuisine=${type}&number=20`
         )
         localStorage.setItem(type, JSON.stringify(res.data.results))
         setRecipes(res.data.results)
