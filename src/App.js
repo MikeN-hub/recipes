@@ -10,12 +10,13 @@ import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
   const location = useLocation()
+  console.log(location)
 
   return (
     <div className='App'>
       <AnimatePresence exitBeforeEnter>
         <Routes location={location} key={location.pathname}>
-          <Route path='https://miken-hub.github.io/recipe-app/' element={<Layout />}>
+          <Route path='/' element={<Layout />}>
             <Route index element={<Home />}></Route>
             <Route path='cuisine/:type' element={<Cuisine />}></Route>
             <Route path='searched/:value' element={<Searched />}></Route>
