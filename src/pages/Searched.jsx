@@ -13,7 +13,7 @@ const Searched = () => {
   const getSearch = async (query) => {
     try {
       const res = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&query=${query}`
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&query=${query}&number=100`
       )
       if (res.data.results.length === 0) {
         setNoResults(true)
@@ -55,6 +55,7 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 2rem;
+  margin: 1rem 3rem;
 `
 
 const Card = styled.div`

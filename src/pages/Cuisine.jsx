@@ -57,11 +57,18 @@ const Cuisine = () => {
 
 export default Cuisine
 
+const SHeader = styled.header`
+  margin: 2rem auto;
+  h1 {
+    text-align: center;
+  }
+`
+
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 3rem;
-  margin: 2rem auto;
+  margin: 2rem 3rem;
 `
 
 const Card = styled.div`
@@ -99,12 +106,5 @@ const Card = styled.div`
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-  }
-`
-
-const SHeader = styled.header`
-  margin: 2rem auto;
-  h1 {
-    text-align: center;
   }
 `

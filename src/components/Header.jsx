@@ -41,6 +41,13 @@ const SNav = styled.nav`
   .repo {
     margin-left: auto;
   }
+
+  @media (max-width: 576px) {
+    & {
+      justify-content: center;
+      gap: 1rem;
+    }
+  }
 `
 const SRepo = styled.a`
   font-size: 2rem;
