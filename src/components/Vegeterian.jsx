@@ -3,6 +3,7 @@ import axios from 'axios'
 import styled from 'styled-components'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import { Link } from 'react-router-dom'
+import plug from '../images/plug-2.jpg'
 
 const API_KEY = process.env.REACT_APP_API_KEY
 
@@ -50,8 +51,14 @@ const Vegeterian = () => {
               <SplideSlide key={recipe.id}>
                 <Card>
                   <Link to={`/details/${recipe.id}`}>
-                    <img src={recipe.image} alt={recipe.title} />
-                    <p>{recipe.title}</p>
+                    <img
+                      src={recipe.image || plug}
+                      alt={recipe.title}
+                      style={!recipe.image ? { border: '1px solid grey' } : {}}
+                    />
+                    <p style={!recipe.image ? { color: 'grey' } : {}}>
+                      {recipe.title}
+                    </p>
                   </Link>
                 </Card>
               </SplideSlide>
@@ -82,11 +89,10 @@ const Card = styled.div`
 
   p {
     position: absolute;
-    width: 100%;
-    height: 40%;
-    bottom: 0%;
+    width: 80%;
     left: 50%;
-    transform: translate(-50%, 0%);
+    top: 50%;
+    transform: translate(-50%, -50%);
     color: #fff;
     font-weight: bold;
     font-size: 1.5rem;
@@ -96,11 +102,24 @@ const Card = styled.div`
     justify-content: center;
     text-align: center;
     z-index: 10;
+
+    @media (max-width: 992px) {
+      & {
+        font-size: 1rem;
+      }
+    }
+    @media (max-width: 576px) {
+      & {
+        font-size: 0.5rem;
+      }
+    }
   }
   img {
     border-radius: 2rem;
     position: absolute;
-    left: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 `
 

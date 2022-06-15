@@ -14,7 +14,7 @@ const Header = () => {
       </motion.div>
       <h1>delicious</h1>
       <motion.div className='repo' whileHover={{ scale: 1.1 }}>
-        <SRepo href='https://github.com/MikeN-hub/recipe-app'>Repo</SRepo>
+        <SRepo href='https://github.com/MikeN-hub/recipes'>Repo</SRepo>
       </motion.div>
     </SNav>
   )

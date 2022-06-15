@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
+import plug from '../images/plug-2.jpg'
 
 const API_KEY = process.env.REACT_APP_API_KEY
 
@@ -32,7 +33,7 @@ const Details = () => {
     <Wrapper>
       <LeftSide>
         <h3>{recipe.title}</h3>
-        <img src={recipe.image} alt='' />
+        <img src={recipe.image || plug} alt='' />
       </LeftSide>
       <RightSide>
         <button
